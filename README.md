@@ -1,15 +1,13 @@
-# Semester-project-agoodling-aquiton
 # Tutorial
 
+#Overview
 
 
-Overview
+#Getting Started
 
-Getting Started
+#Step-by-step coding instructions
 
-Step-by-step coding instructions
+#Further Discussion/Conclusions
 
-Further Discussion/Conclusions
-
-See Also Section
+#See Also Section
 
