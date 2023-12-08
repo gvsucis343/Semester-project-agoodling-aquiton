@@ -16,6 +16,8 @@
 		38DBEFD62B162924009AD073 /* ios_mapkitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DBEFD52B162924009AD073 /* ios_mapkitTests.swift */; };
 		38DBEFE02B162924009AD073 /* ios_mapkitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DBEFDF2B162924009AD073 /* ios_mapkitUITests.swift */; };
 		38DBEFE22B162924009AD073 /* ios_mapkitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DBEFE12B162924009AD073 /* ios_mapkitUITestsLaunchTests.swift */; };
+		38DC58D22B2267BC00563354 /* ScavengerHunts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DC58D12B2267BC00563354 /* ScavengerHunts.swift */; };
+		38DC58D42B22D91D00563354 /* HuntTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DC58D32B22D91D00563354 /* HuntTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		38DBEFDB2B162924009AD073 /* ios-mapkitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-mapkitUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38DBEFDF2B162924009AD073 /* ios_mapkitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_mapkitUITests.swift; sourceTree = "<group>"; };
 		38DBEFE12B162924009AD073 /* ios_mapkitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_mapkitUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		38DC58D12B2267BC00563354 /* ScavengerHunts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScavengerHunts.swift; sourceTree = "<group>"; };
+		38DC58D32B22D91D00563354 /* HuntTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuntTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				38DBEFC72B162924009AD073 /* Assets.xcassets */,
 				38DBEFC92B162924009AD073 /* LaunchScreen.storyboard */,
 				38DBEFCC2B162924009AD073 /* Info.plist */,
+				38DC58D32B22D91D00563354 /* HuntTableViewController.swift */,
+				38DC58D12B2267BC00563354 /* ScavengerHunts.swift */,
 			);
 			path = "ios-mapkit";
 			sourceTree = "<group>";
@@ -258,6 +264,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38DC58D42B22D91D00563354 /* HuntTableViewController.swift in Sources */,
+				38DC58D22B2267BC00563354 /* ScavengerHunts.swift in Sources */,
 				38DBEFC32B162922009AD073 /* ViewController.swift in Sources */,
 				38DBEFBF2B162922009AD073 /* AppDelegate.swift in Sources */,
 				38DBEFC12B162922009AD073 /* SceneDelegate.swift in Sources */,
