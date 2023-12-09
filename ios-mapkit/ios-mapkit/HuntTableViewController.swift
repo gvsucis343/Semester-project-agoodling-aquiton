@@ -17,29 +17,45 @@ class HuntTableViewController: UITableViewController{
   
     
     @IBOutlet var huntViewTable: UITableView!
+
     
-  
+    
+    @IBAction func createButton(_ sender: UIButton) {
+        
+        
+        
+        dismiss(animated: true)
+    }
+    
+    
+    
     var huntDelegate: HuntTableViewControllerDelegate?
     
     var hunts: [ScavengerHunts] = []
-    var newHunt: ScavengerHunts = ScavengerHunts(latitudes: [42.9634, 42.8], longitudes: [-85.6681,-85.7], huntName: "GrandRapids")
-    var newHunt2: ScavengerHunts = ScavengerHunts(latitudes: [30], longitudes: [-80], huntName: "Test")
+    var newHunt: ScavengerHunts = ScavengerHunts(name: "GrandRapids")
+    var newHunt2: ScavengerHunts = ScavengerHunts(name: "Test")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        newHunt.CreatePin(lat: 42.9634, long: -85.6681, pinName: "GR")
+        newHunt.CreatePin(lat: 43, long: -84, pinName: "Random")
+        newHunt2.CreatePin(lat: 30, long: -80, pinName: "Test")
+        
         hunts.append(newHunt)
         hunts.append(newHunt2)
     }
     
-    var tableViewData: [(sectionHeader: String, entries: [ScavengerHunts])]? {
-        didSet{
-            DispatchQueue.main.async{
-                self.tableView.reloadData()
-            }
-        }
-    }
+//    var tableViewData: [(sectionHeader: String, entries: [ScavengerHunts])]? {
+//        didSet{
+//            DispatchQueue.main.async{
+//                self.tableView.reloadData()
+//            }
+//        }
+//    }
     
-    //displays cells
+    //displays cells in table
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellID" )
@@ -60,6 +76,7 @@ class HuntTableViewController: UITableViewController{
     
 }
 
+//delegation
 extension HuntTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         huntDelegate?.hasSelected(entry: hunts[indexPath.row])

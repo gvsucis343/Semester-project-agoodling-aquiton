@@ -29,6 +29,18 @@
                                     <segue destination="0QM-jl-CPy" kind="show" identifier="huntSegue" id="Zmu-4O-lXV"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bi9-De-sKE">
+                                <rect key="frame" x="16" y="59" width="77" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Cancel"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGT-mD-nRG">
+                                <rect key="frame" x="169" y="702" width="55" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -59,11 +71,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <containerView key="tableFooterView" opaque="NO" contentMode="scaleToFill" id="8mo-Yu-Y4q">
-                            <rect key="frame" x="0.0" y="121.66666793823242" width="393" height="228"/>
+                        <containerView key="tableFooterView" opaque="NO" contentMode="scaleToFill" id="0xd-su-3kS">
+                            <rect key="frame" x="0.0" y="122" width="393" height="125"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <connections>
-                                <segue destination="cOt-FG-QqN" kind="embed" id="Qa9-7S-dMJ"/>
+                                <segue destination="uhV-lR-fX8" kind="embed" id="jss-ou-Ntf"/>
                             </connections>
                         </containerView>
                         <prototypes>
@@ -106,27 +118,30 @@
             </objects>
             <point key="canvasLocation" x="1034.3511450381679" y="-197.18309859154931"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="EpU-VK-AgN">
+        <!--Scavenger Hunt Button-->
+        <scene sceneID="z8I-oD-Edj">
             <objects>
-                <viewController id="cOt-FG-QqN" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Mkl-qx-fKU">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="228"/>
+                <viewController id="uhV-lR-fX8" customClass="ScavengerHuntButton" customModule="ios_mapkit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ddm-c4-Rtj">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="125"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuN-BC-N8V">
-                                <rect key="frame" x="159" y="59" width="75" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzF-d1-ImA">
+                                <rect key="frame" x="139" y="45" width="116" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Create Hunt"/>
+                                <connections>
+                                    <action selector="createHunt:" destination="uhV-lR-fX8" eventType="touchUpInside" id="ZCU-Xe-uIw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="K94-dV-pAL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iEA-af-ddh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1761" y="-228"/>
+            <point key="canvasLocation" x="1816" y="-292"/>
         </scene>
     </scenes>
     <resources>

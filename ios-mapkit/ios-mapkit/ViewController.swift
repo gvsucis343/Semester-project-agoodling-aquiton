@@ -13,7 +13,9 @@ class ViewController: UIViewController {
 
     @IBOutlet var mapView: MKMapView!
     var locationManager: CLLocationManager!
-    var hunt: ScavengerHunts = ScavengerHunts()
+    var hunt: ScavengerHunts = ScavengerHunts(name: "")
+
+
 
 
     
@@ -22,7 +24,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         locationManager = CLLocationManager()
         locationManager.requestWhenInUseAuthorization()
-
+        //check for Authorization to use users location
         switch locationManager.authorizationStatus {
                     case .notDetermined:
                         print("Not determined")
@@ -37,32 +39,21 @@ class ViewController: UIViewController {
                     @unknown default:
                         print("Unknown status")
                     }
+        //show users location
         mapView.showsUserLocation = true;
     }
     
-    
+    //Add pin to maps
     private func AddPin()
     {
-        let annotation1 = MKPointAnnotation()
-//        annotation1.coordinate = CLLocationCoordinate2D(latitude: hunt.latitudes[0], longitude: hunt.longitudes[0])
-//        annotation1.title = hunt.huntName
-//        annotation1.subtitle = hunt.huntProgress
-//        mapView.addAnnotation(annotation1)
-        mapView.showAnnotations(self.mapView.annotations, animated: true)
-        print("added annotation")
-        
-        
-        for i in 0...(hunt.latitudes.count - 1){
-            annotation1.coordinate = CLLocationCoordinate2D(latitude: hunt.latitudes[i], longitude: hunt.longitudes[i])
-            annotation1.title = hunt.huntName
-            annotation1.subtitle = hunt.huntProgress
-            mapView.addAnnotation(annotation1)
+        for pin in hunt.annotations{
+            mapView.addAnnotation(pin)
         }
-        
         mapView.showAnnotations(self.mapView.annotations, animated: true)
         
     }
     
+    //Delegation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "huntSegue"){
             if let dest = segue.destination as? HuntTableViewController{
@@ -73,6 +64,7 @@ class ViewController: UIViewController {
  
 }
 
+//Delegation
 extension ViewController: HuntTableViewControllerDelegate {
     func hasSelected(entry: ScavengerHunts) {
         print("delegated")

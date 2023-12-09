@@ -6,18 +6,28 @@
 //
 
 import Foundation
+import MapKit
 
-struct ScavengerHunts{
-    var latitudes: [Double] = []
-    var longitudes: [Double] = []
+class ScavengerHunts{
+    var annotations: [MKPointAnnotation] = []
     var huntName: String = ""
     var huntProgress: String = "Uncompleted"
     
-//    init(lat: [Double], long: [Double], name: String, progress: String){
-//        self.latitudes = lat
-//        self.longitudes = long
-//        self.huntName = name
-//        self.huntProgress = progress
-//    }
+    init(name: String){
+        self.huntName = name
+    }
+    
+    func CreatePin(lat: Double, long: Double, pinName: String){
+        var annotation1 = MKPointAnnotation()
+        annotation1.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+        annotation1.title = pinName
+        annotation1.subtitle = "Uncompleted"
+        self.annotations.append(annotation1)
+        return
+    }
+    
     
 }
+
+
+
