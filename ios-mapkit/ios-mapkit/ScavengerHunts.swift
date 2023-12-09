@@ -17,9 +17,9 @@ class ScavengerHunts{
         self.huntName = name
     }
     
-    func CreatePin(lat: Double, long: Double, pinName: String){
+    func CreatePin(lat: Double?, long: Double?, pinName: String){
         var annotation1 = MKPointAnnotation()
-        annotation1.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+        annotation1.coordinate = CLLocationCoordinate2D(latitude: lat!, longitude: long!)
         annotation1.title = pinName
         annotation1.subtitle = "Uncompleted"
         self.annotations.append(annotation1)

@@ -34,12 +34,28 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="naP-rE-dKJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLh-7d-0ru">
+                                <rect key="frame" x="294" y="702" width="65" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Done"/>
+                                <connections>
+                                    <action selector="done:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FeG-B1-xME"/>
+                                    <segue destination="0QM-jl-CPy" kind="show" identifier="doneSegue" id="7tM-iK-TNH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGT-mD-nRG">
                                 <rect key="frame" x="169" y="702" width="55" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add"/>
+                                <connections>
+                                    <action selector="add:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AH9-TW-Afl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -56,6 +72,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="VsT-0S-TLx"/>
                     <connections>
+                        <outlet property="ScavHuntButton" destination="NNu-xM-x3g" id="vEm-z0-pXT"/>
+                        <outlet property="cancelCreate" destination="Bi9-De-sKE" id="5W5-Dk-O3I"/>
+                        <outlet property="createPin" destination="VGT-mD-nRG" id="ABJ-gC-K8L"/>
+                        <outlet property="doneButton" destination="iLh-7d-0ru" id="lpt-OS-SYn"/>
                         <outlet property="mapView" destination="ZLx-m3-nxT" id="48k-QX-jcd"/>
                     </connections>
                 </viewController>
@@ -71,16 +91,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <containerView key="tableFooterView" opaque="NO" contentMode="scaleToFill" id="0xd-su-3kS">
-                            <rect key="frame" x="0.0" y="122" width="393" height="125"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            <connections>
-                                <segue destination="uhV-lR-fX8" kind="embed" id="jss-ou-Ntf"/>
-                            </connections>
-                        </containerView>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="yth-6N-lfL">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="ScavengerHunts" id="5Gu-T1-yd9">
+                                    <barButtonItem key="rightBarButtonItem" title="Create" id="D5s-sV-rsv">
+                                        <connections>
+                                            <action selector="createHunt:" destination="0QM-jl-CPy" id="4og-BW-s4c"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cellID" textLabel="zoe-fs-Edw" detailTextLabel="GVS-Z5-dUg" style="IBUITableViewCellStyleSubtitle" id="Tlh-vD-yQa">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <rect key="frame" x="0.0" y="94" width="393" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tlh-vD-yQa" id="SeW-YR-CyV">
                                     <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="43.666667938232422"/>
@@ -116,34 +142,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hyp-l3-jVp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1034.3511450381679" y="-197.18309859154931"/>
-        </scene>
-        <!--Scavenger Hunt Button-->
-        <scene sceneID="z8I-oD-Edj">
-            <objects>
-                <viewController id="uhV-lR-fX8" customClass="ScavengerHuntButton" customModule="ios_mapkit" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ddm-c4-Rtj">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="125"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzF-d1-ImA">
-                                <rect key="frame" x="139" y="45" width="116" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Create Hunt"/>
-                                <connections>
-                                    <action selector="createHunt:" destination="uhV-lR-fX8" eventType="touchUpInside" id="ZCU-Xe-uIw"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iEA-af-ddh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1816" y="-292"/>
+            <point key="canvasLocation" x="1042" y="-211"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="7tM-iK-TNH"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
