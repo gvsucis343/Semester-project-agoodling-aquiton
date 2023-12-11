@@ -63,7 +63,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         }
 
         // Access the coordinates of the selected pin
-        let selectedCoordinates = annotation.coordinate
+        _ = annotation.coordinate
 
         // Print the coordinates to the terminal window
         let alert = UIAlertController(title: "Spot Visited?", message: "Has this spot been visited?", preferredStyle: .alert)
@@ -72,13 +72,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
                 // Handle the case where the spot has been visited
                 annotation.subtitle = "Done"
-                let view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "pin")
-
-                    view.markerTintColor = .blue
-         
-              
-                
-                
+    
             }))
 
             // Add a cancel button to the alert
