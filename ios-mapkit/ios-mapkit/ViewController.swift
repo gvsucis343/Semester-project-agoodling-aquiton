@@ -102,6 +102,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     @IBAction func cancel(_ sender: UIButton) {
         hideCreateButtons = true
         updateButtons()
+        mapView.removeAnnotations(mapView.annotations)
     }
     
     @IBAction func done(_ sender: UIButton) {
